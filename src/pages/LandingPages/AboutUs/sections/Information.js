@@ -20,7 +20,7 @@ function Information() {
       component="section"
       position="relative"
       py={4}
-      px={{ xs: 0, lg: 8 }}
+      px={{ xs: 0, lg: 0 }}
       mx={-2}
     >
       <MKBox borderRadius="lg" p={2} justifyContent="center" textAlign="center" mb={5} paddingX={1}>
@@ -51,7 +51,7 @@ function Information() {
           spacing={3}
           px={{ xs: 0, lg: 12 }}
         >
-          <Grid mb={5} item xs={12} md={6} lg={4.1} id="sisäpuhdistukset">
+          <Grid mb={2} item xs={12} md={6} lg={4.1} id="sisäpuhdistukset">
             <MKBox sx={{ border: "2px solid grey" }} borderRadius="lg" py={2}>
               <Grid
                 px={{ xs: 0, lg: 2 }}
@@ -147,8 +147,8 @@ function Information() {
               </Grid>
             </MKBox>
           </Grid>
-          <Grid mb={5} item xs={12} lg={4.1} id="paketit">
-            <MKBox sx={{ border: "2px solid grey" }} borderRadius="lg" py={2}>
+          <Grid mb={2} item xs={12} lg={4.1} id="paketit">
+            <MKBox sx={{ border: "2px solid grey" }} minHeight="293.3px" borderRadius="lg" py={2}>
               <Grid
                 px={{ xs: 0, lg: 2 }}
                 mx={0}
@@ -161,7 +161,7 @@ function Information() {
               >
                 <Grid item textAlign="center">
                   <MKTypography
-                    variant={isLargeScreen ? "h2" : "h3"}
+                    variant={isLargeScreen ? "h3" : "h3"}
                     mb={2}
                     color="default"
                     sx={({ breakpoints, typography: { size } }) => ({
@@ -170,33 +170,34 @@ function Information() {
                       },
                     })}
                   >
-                    Paketit
+                    Paketit:
                   </MKTypography>
                 </Grid>
                 <Grid item>
                   <Accordion expanded={expanded === "panel7"} onChange={handleChange("panel7")}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
-                        Kesärenkaat ja sisusta 15.5 asti 105€
+                      <MKTypography color="warning" variant={isLargeScreen ? "h5" : "h6"}>
+                        Kesäkuntoon kampanja 105€
                       </MKTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Tällä kampanjalla saat autosi kesävalmiiksi, sillä pakettiin mahtuukin
-                        sisäpuhdistus ja renkaiden vaihto.
+                        - Tällä kampanjalla saat autosi kesävalmiiksi, sillä paketilla saat autosi
+                        sisustan puhtaaksi ja kesärenkaat vaivatta allesi.
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
                         - Paketti sisältää: sisäpesu 80€, verhoilupesu 30€, takakontti 15€ ja
                         renkaanvaihto 20€.
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Kevään paras diili, varaathan aikasi pian!
+                        - Kevään paras diili joten varaathan aikasi pian, sillä kampanjaan loppuu
+                        20.5
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
                 </Grid>
                 <Grid item>
-                  <Accordion expanded={expanded === "panel8"} onChange={handleChange("panel8")}>
+                  <Accordion expanded={expanded === "panel9"} onChange={handleChange("panel9")}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
                         Perus paketti 110€
@@ -216,7 +217,7 @@ function Information() {
               </Grid>
             </MKBox>
           </Grid>
-          <Grid mb={4} item xs={12} lg={4.1} id="ulkopuhdistukset">
+          <Grid mb={2} item xs={12} lg={4.1} id="ulkopuhdistukset">
             <MKBox sx={{ border: "2px solid grey" }} borderRadius="lg" py={2}>
               <Grid
                 px={{ xs: 0, lg: 2 }}
