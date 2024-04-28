@@ -1,19 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
@@ -25,10 +9,8 @@ import MKTypography from "components/MKTypography";
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
+import team1 from "assets/images/mina.jpeg";
+import logo from "assets/images/D.png";
 
 function Team() {
   return (
@@ -38,18 +20,17 @@ function Team() {
       bgColor="dark"
       position="relative"
       py={6}
-      px={{ xs: 2, lg: 0 }}
-      mx={-2}
+      px={{ xs: 0, lg: 0 }}
+      mx={-3}
     >
       <Container>
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 6 }}>
             <MKTypography variant="h3" color="white">
-              The Executive Team
+              Yrityksestä
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
+              Lisätietoa minusta ja yrityksestä!
             </MKTypography>
           </Grid>
         </Grid>
@@ -58,39 +39,19 @@ function Team() {
             <MKBox mb={1}>
               <HorizontalTeamCard
                 image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                name="Jani Lehto"
+                position={{ color: "info", label: "Yrittäjä/Opiskelija" }}
+                description="Hei! Alotin yritystoimintani 2023 kesällä kotikaupungissani Joensuussa, josta muutin opintojen perässä Tampereelle tuoden yritystoiminnan mukanani. Vuonna 2024 tavoitteeni on laajentaa palveluiden valikoimaa ja saada kerättyä tyytyväisiä asiakkaita. Seuraavaksi tavoitteena on ottaa mukaan ulkopesut ja pinnoitukset. Helpoiten saa yhteyttä lähettämällä viestin ajanvarauslomakkeella tai soittamalla!"
               />
             </MKBox>
           </Grid>
           <Grid item xs={12} lg={6}>
             <MKBox mb={1}>
               <HorizontalTeamCard
-                image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                image={logo}
+                name="Detail ja Ylläpito Tampere"
+                position={{ color: "info", label: "Yhteystiedot" }}
+                description="Puh - 045 117 4841 | Gmail - jani.jl.lehto@gmail.com | Tampere | Luoksetuleva palvelu"
               />
             </MKBox>
           </Grid>
