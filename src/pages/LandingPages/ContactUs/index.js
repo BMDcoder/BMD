@@ -51,6 +51,8 @@ function ContactUs() {
   const [address, setAddress] = useState("");
   const [date, setDate] = useState("");
   const [additionalMessage, setAdditionalMessage] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
   const [syvapuhdistus, setSisapesuNormi] = useState(false);
   const [kustomoitu, setUlkopesuNormi] = useState(false);
   const [perusSisapesu, setPakettiNormi] = useState(false);
@@ -64,34 +66,38 @@ function ContactUs() {
     let message = `Uusi asiakas!:\n\nNimi: ${name}\nGmail: ${email}\nOsoite: ${address}\nPäivä: ${date}\nViesti: ${additionalMessage}`;
     // If terms are accepted, append acceptance status to the message
 
-    if (!perusSisapesu) {
-      message += "\nperus sisäpesu";
-      if (syvapuhdistus) {
-        message += "\nSyväpuhdistus";
-      }
-      if (kustomoitu) {
-        message += "\nHaluan jotain tietyn paketin";
-      }
+    if (perusSisapesu) {
+      message += "\nperus sisäpesu 60€";
+    }
+    if (syvapuhdistus) {
+      message += "\nSyväpuhdistus 180€";
+    }
+    if (kustomoitu) {
+      message += "\nHaluan jotain tietyn paketin";
     }
     if (verhoilupesu) {
-      message += "\nVerhoilupesu";
+      message += "\nVerhoilupesu +30€";
     }
     if (nahkapuhdistus) {
-      message += "\nNahkapuhdistus";
+      message += "\nNahkapuhdistus +10€";
     }
     if (takakontti) {
       message += "\nTakakontti";
     }
-    if (perusSisapesu) {
-      message += "\nValittu palvelu: Paketti Normi";
-    }
     if (kampanja) {
-      message += "\n Kampanja: renkaanvaihto ja sisäpesu";
+      message += "\n Kampanja: renkaanvaihto ja sisäpesu 105€";
     }
     if (peruspaketti) {
-      message += "\n Perus paketti sisäpesu";
+      message += "\n Perus paketti sisäpesu 110€";
     }
     sendTelegramMessage(message);
+    setName("");
+    setEmail("");
+    setAddress("");
+    setDate("");
+    setAdditionalMessage("");
+    setMessageSent(true);
+    setButtonDisabled(true);
   };
   const handleCheckboxChange = (checkboxName, newValue) => {
     switch (checkboxName) {
@@ -270,7 +276,7 @@ function ContactUs() {
                               }}
                             />
                           }
-                          label="Perus sisäpesu alk. 80€"
+                          label="Perus sisäpesu alk. 60€"
                           mb={6}
                         />
                         <Grid ml={2}>
@@ -288,7 +294,7 @@ function ContactUs() {
                             }
                             label={
                               <MKTypography variant={isLargeScreen ? "body2" : "button"}>
-                                Verhoilupesu 30€
+                                Verhoilupesu 40€
                               </MKTypography>
                             }
                           />
@@ -469,15 +475,26 @@ function ContactUs() {
               </Grid>
               <Grid container item justifyContent="center" xs={12} my={6}>
                 <MKButton
+                  disabled={buttonDisabled}
                   onClick={() => {
                     handleMessageSend();
-                    alert("Viesti Lähetetty!:) Olen yhteydessä mahdollisimman pian");
                   }}
                   variant="gradient"
                   color="dark"
                 >
                   Lähetä viesti
                 </MKButton>
+                {messageSent && (
+                  <MKTypography
+                    ml={2}
+                    mt={1}
+                    color="success"
+                    variant={isLargeScreen ? "subtitle2" : "button"}
+                    textAlign="center"
+                  >
+                    Viesti lähetetty.
+                  </MKTypography>
+                )}
               </Grid>
             </MKBox>
           </MKBox>
