@@ -61,6 +61,9 @@ function ContactUs() {
   const [takakontti, setTakakontti] = useState(false);
   const [kampanja, setKanpanja] = useState(false);
   const [peruspaketti, setPeruspaketti] = useState(false);
+  const [työpaikalla, setTyöpaikalla] = useState(false);
+  const [kerrostalossa, setKerrostalossa] = useState(false);
+  const [omakotitalossa, setOmakotitalossa] = useState(false);
 
   const handleMessageSend = () => {
     let message = `Uusi asiakas!:\n\nNimi: ${name}\nGmail: ${email}\nOsoite: ${address}\nPäivä: ${date}\nViesti: ${additionalMessage}`;
@@ -70,25 +73,34 @@ function ContactUs() {
       message += "\nperus sisäpesu 60€";
     }
     if (syvapuhdistus) {
-      message += "\nSyväpuhdistus 180€";
+      message += "\nSyväpuhdistus 150€";
     }
     if (kustomoitu) {
-      message += "\nHaluan jotain tietyn paketin";
+      message += "\nKustomoitu alk. 50€";
     }
     if (verhoilupesu) {
-      message += "\nVerhoilupesu +30€";
+      message += "\nVerhoilupesu 50€";
     }
     if (nahkapuhdistus) {
-      message += "\nNahkapuhdistus +10€";
+      message += "\nNahkapuhdistus 25€";
     }
     if (takakontti) {
-      message += "\nTakakontti";
+      message += "\nTakakontti 10€";
     }
     if (kampanja) {
-      message += "\n Kampanja: renkaanvaihto ja sisäpesu 105€";
+      message += "\n Premium 250€";
     }
     if (peruspaketti) {
-      message += "\n Perus paketti sisäpesu 110€";
+      message += "\n Sisäpesu | Paketti 110€";
+    }
+    if (omakotitalossa) {
+      message += "\n Omakotitalossa";
+    }
+    if (kerrostalossa) {
+      message += "\n kerrostalossa";
+    }
+    if (työpaikalla) {
+      message += "\n työpaikalla";
     }
     sendTelegramMessage(message);
     setName("");
@@ -198,6 +210,30 @@ function ContactUs() {
           setPeruspaketti(false);
         }
         break;
+      case "työpaikalla":
+        setTyöpaikalla(newValue);
+        if (newValue) {
+          setKerrostalossa(false);
+          setOmakotitalossa(false);
+          // Other settings specific to being at work
+        }
+        break;
+      case "kerrostalossa":
+        setKerrostalossa(newValue);
+        if (newValue) {
+          setTyöpaikalla(false);
+          setOmakotitalossa(false);
+          // Other settings specific to living in an apartment building
+        }
+        break;
+      case "omakotitalossa":
+        setOmakotitalossa(newValue);
+        if (newValue) {
+          setTyöpaikalla(false);
+          setKerrostalossa(false);
+          // Other settings specific to living in a detached house
+        }
+        break;
       default:
         break;
     }
@@ -240,13 +276,15 @@ function ContactUs() {
               </MKTypography>
             </MKBox>
             <Grid mx={{ lg: 30, xs: 1 }}>
-              <MKTypography item variant={isLargeScreen ? "subtitle1" : "body2"} mt={3}>
-                Tällä yhteydenottolomakkeella saat vastaukseksi tiedon, milloin seuraava mahdollinen
-                pesun aika on.
+              <MKTypography item variant={isLargeScreen ? "subtitle2" : "body2"} mt={3}>
+                Tällä lomakkeella voit valita itsellesi sopivan pesukokonaisuuden ja tiedustella
+                seuraavaa mahdollista aikaa. Voit myös ehdottaa päivämäärätoiveen ja kenties kertoa
+                viestissä mihin aikaan sinulle sopisi pesu. Vastaan mahdollisimman pian ajan
+                saatavuudella ja seuraavalla ajalla.
               </MKTypography>
-              <MKTypography item variant={isLargeScreen ? "subtitle1" : "body2"} mt={3}>
-                Viesti kohtaan voit vapaavalintaisesti kirjoittaa kysymyksiä, tai kertoa mitä
-                haluaisit autollesi tehtäväksi.
+              <MKTypography item variant={isLargeScreen ? "subtitle2" : "body2"} mt={3}>
+                Viesti kohtaan voit kertoa autostasi ja sen tämänhetkisestä tilasta. Viestit osiosta
+                voit myös tiedustella kuukausipesujen saatavuutta ja erikoispesuja
               </MKTypography>
             </Grid>
             <MKBox my={3}>
@@ -276,7 +314,7 @@ function ContactUs() {
                               }}
                             />
                           }
-                          label="Perus sisäpesu alk. 60€"
+                          label="Perus sisäpesu 60€"
                           mb={6}
                         />
                         <Grid ml={2}>
@@ -293,8 +331,8 @@ function ContactUs() {
                               />
                             }
                             label={
-                              <MKTypography variant={isLargeScreen ? "body2" : "button"}>
-                                Verhoilupesu 40€
+                              <MKTypography variant={isLargeScreen ? "subtitle2" : "button"}>
+                                Verhoilupesu 50€
                               </MKTypography>
                             }
                           />
@@ -311,8 +349,8 @@ function ContactUs() {
                               />
                             }
                             label={
-                              <MKTypography variant={isLargeScreen ? "body2" : "button"}>
-                                Nahkapesu & hoito 15€
+                              <MKTypography variant={isLargeScreen ? "subtitle2" : "button"}>
+                                Nahkapesu & hoito 25€
                               </MKTypography>
                             }
                           />
@@ -329,7 +367,7 @@ function ContactUs() {
                               />
                             }
                             label={
-                              <MKTypography variant={isLargeScreen ? "body2" : "button"}>
+                              <MKTypography variant={isLargeScreen ? "subtitle2" : "button"}>
                                 Takakontti 15€
                               </MKTypography>
                             }
@@ -348,7 +386,7 @@ function ContactUs() {
                               }
                             />
                           }
-                          label="Syväpuhdistus 180€"
+                          label="Syväpuhdistus 150€"
                         />
                         <FormControlLabel
                           sx={{
@@ -383,21 +421,7 @@ function ContactUs() {
                         <MKTypography variant={isLargeScreen ? "h3" : "h4"} mb={1}>
                           Paketit:
                         </MKTypography>
-                        <MKTypography variant={isLargeScreen ? "subtitle2" : "button"} mb={1}>
-                          Kampanja: renkaanvaihto, sisäpuhdistus ja verhoilupesu hintaan 105€ 15.5
-                          asti!
-                        </MKTypography>
                         <Grid ml={1}>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={kampanja}
-                                onChange={(e) => handleCheckboxChange("kampanja", e.target.checked)}
-                              />
-                            }
-                            label="Kampanja! 105€"
-                            mb={6}
-                          />
                           <FormControlLabel
                             control={
                               <Checkbox
@@ -407,10 +431,94 @@ function ContactUs() {
                                 }
                               />
                             }
-                            label="Perus paketti 110€"
+                            label="Sisäpesu | Paketti 110€"
+                          />
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={kampanja}
+                                onChange={(e) => handleCheckboxChange("kampanja", e.target.checked)}
+                              />
+                            }
+                            label="Premium | Paketti 250€"
+                            mb={6}
                           />
                         </Grid>
                       </MKBox>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item mt={{ xs: 3, lg: 3 }} lg={5} xs={12}>
+                  <Grid
+                    ml={{ lg: 0, xs: 2 }}
+                    container
+                    direction="column"
+                    alignItems={{ lg: "center", xs: "left" }}
+                    justifyContent="center"
+                  >
+                    <Grid item textAlign="left">
+                      <MKTypography variant={isLargeScreen ? "h4" : "h4"} mb={1}>
+                        Pesupaikka:
+                      </MKTypography>
+                      <Grid ml={1}>
+                        <FormControlLabel
+                          sx={{
+                            maxHeight: 20,
+                          }}
+                          control={
+                            <Checkbox
+                              checked={omakotitalossa}
+                              onChange={(e) => {
+                                handleCheckboxChange("omakotitalossa", e.target.checked);
+                              }}
+                            />
+                          }
+                          label={
+                            <MKTypography variant={isLargeScreen ? "subtitle2" : "button"}>
+                              Omakotitalossa
+                            </MKTypography>
+                          }
+                          mb={6}
+                        />
+                        <FormControlLabel
+                          sx={{
+                            maxHeight: 20,
+                          }}
+                          item
+                          control={
+                            <Checkbox
+                              checked={kerrostalossa}
+                              onChange={(e) =>
+                                handleCheckboxChange("kerrostalossa", e.target.checked)
+                              }
+                            />
+                          }
+                          label={
+                            <MKTypography variant={isLargeScreen ? "subtitle2" : "button"}>
+                              Kerros-/Rivitalossa
+                            </MKTypography>
+                          }
+                        />
+                        <FormControlLabel
+                          sx={{
+                            maxHeight: 20,
+                          }}
+                          item
+                          control={
+                            <Checkbox
+                              checked={työpaikalla}
+                              onChange={(e) => {
+                                handleCheckboxChange("työpaikalla", e.target.checked);
+                              }}
+                            />
+                          }
+                          label={
+                            <MKTypography variant={isLargeScreen ? "subtitle2" : "button"}>
+                              Työpaikalla
+                            </MKTypography>
+                          }
+                        />
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>

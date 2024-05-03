@@ -25,7 +25,7 @@ function Information() {
     >
       <MKBox borderRadius="lg" p={2} justifyContent="center" textAlign="center" mb={5} paddingX={1}>
         <MKTypography
-          variant="h1"
+          variant="h2"
           sx={({ breakpoints, typography: { size } }) => ({
             [breakpoints.down("md")]: {
               fontSize: size["3xl"],
@@ -34,11 +34,12 @@ function Information() {
         >
           Hinnasto
         </MKTypography>
-        <MKTypography variant={isLargeScreen ? "body1" : "body2"} opacity={0.8} mt={1}>
-          Hinnastoon kuuluu matkakulut Tampere - 35km alueella. Lisämatka 1€/km yhteen suuntaan.
+        <MKTypography variant={isLargeScreen ? "subtitle2" : "subtitle2"} mt={1}>
+          Hinnastoon kuuluuvat matkakulut Tampere - 35km alueella. Lisämatka 1€/km yhteen suuntaan.
         </MKTypography>
-        <MKTypography variant={isLargeScreen ? "body1" : "body2"} opacity={0.8} mt={1} mb={3}>
-          Kaikki pesut tehdään asiakkaan omassa pihassa!
+        <MKTypography variant={isLargeScreen ? "subtitle2" : "subtitle2"} mt={1} mb={3}>
+          Kaikki pesut tehdään asiakkaan omassa pihassa. Ulkopuhdistukset mahdollisia vain
+          omakotitalon pihassa, muuten erikoisjärjestelyllä.
         </MKTypography>
       </MKBox>
       <Grid columns={2} container paddingX={1} sx={{ minHeight: "800px" }}>
@@ -65,7 +66,7 @@ function Information() {
               >
                 <Grid item textAlign="center">
                   <MKTypography
-                    variant={isLargeScreen ? "h2" : "h3"}
+                    variant={isLargeScreen ? "h3" : "h3"}
                     color="default"
                     mb={2}
                     sx={({ breakpoints, typography: { size } }) => ({
@@ -81,24 +82,23 @@ function Information() {
                   <Accordion expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
-                        Perus sisäpesu 80€
+                        Sisäpesu 60€
                       </MKTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Perus sisäpesu on loistava vaihtoehto jos haluat autostasi peruspuhtaan
-                        järkevään hintaan.
+                        - Perus sisäpesu on loistava vaihtoehto jos haluat autostasi peruspuhtaan.
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Perus sisäpesun mukaan voit valita lisäksi tekstiilipesun 30€, tai
-                        nahkapenkkien hoidon 20€. Tekstiilipesuun sisältyy nahanhoito.
+                        - Sisältää: | Roksien poisto | Syvä imurointi | Kojelaudan ja pintojen
+                        pyyhintä | Jalkamattojen, Ikkunoiden ja Karmien puhdistus
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        ! Pesuun sisältyy roskien poisto, syvä imurointi, pintojen pyyhintä, lasien
-                        ja karmien puhdistus.
+                        - Pesuun voit ottaa lisäksi: | Verhoilupesu 50€ | Nahanpuhdistus & Hoito 25€
+                        | Takakontti 10€
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        !! Jos autosi on todella likainen, syväpuhdistus on suositeltavaa.
+                        - Kesto 1-2h
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
@@ -107,24 +107,21 @@ function Information() {
                   <Accordion expanded={expanded === "panel2"} onChange={handleChange("panel2")}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
-                        Syväpuhdistus | Detail 180€
+                        Syväpuhdistus 150€
                       </MKTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Syväpuhdistus sisältää kaiken sisäpesusta, kuten verhoilupesun ja
-                        nahanhoidon.
+                        - Jos haluat autosi todella puhtaaksi ja yksityiskohtaseksi, niin
+                        syväpuhdistus on oikea vaihtoehto. Syväpuhdistuksessa keskitytään myös
+                        ajoneuvon syvempiin koloihin, kuten nappien rakoihin ja pieniin koloihin.
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Syväpuhdistuksessa puhdistetaan pienet onkalot ja tahrojen puhdistukseen
-                        käytetään höyrypesuria.
+                        - Sisältää: | Sisäpesu | Verhoilupesu | Nahanhoito | Takakontti | Syvät
+                        Onkalot | Nappien puhistus
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Tämä paketti on suositeltavaa, mikäli auto on todella likainen.
-                      </MKTypography>
-                      <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Tälle paketille ei ole aikarajaa, vaan sisustaa puhdistetaan
-                        täydellisyyteen asti.
+                        - Kesto 3-4h
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
@@ -138,8 +135,7 @@ function Information() {
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Jos haluat vain jotakin tiettyä autollesi, esimerkiksi muutaman penkin
-                        pesun otathan rohkeasti yhteyttä ja räätälöidään sopiva pesukokonaisuus!
+                        - Voit tiedustella esimerkiksi pelkkää verhoilupesua ajanvarauslomakkeella!
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
@@ -148,7 +144,7 @@ function Information() {
             </MKBox>
           </Grid>
           <Grid mb={2} item xs={12} lg={4.1} id="paketit">
-            <MKBox sx={{ border: "2px solid grey" }} minHeight="293.3px" borderRadius="lg" py={2}>
+            <MKBox sx={{ border: "2px solid grey" }} borderRadius="lg" py={2}>
               <Grid
                 px={{ xs: 0, lg: 2 }}
                 mx={0}
@@ -174,42 +170,64 @@ function Information() {
                   </MKTypography>
                 </Grid>
                 <Grid item>
-                  <Accordion expanded={expanded === "panel7"} onChange={handleChange("panel7")}>
+                  <Accordion expanded={expanded === "panel9"} onChange={handleChange("panel9")}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <MKTypography color="warning" variant={isLargeScreen ? "h5" : "h6"}>
-                        Kesäkuntoon kampanja 105€
+                      <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
+                        Sisäpesu | Paketti 110€
                       </MKTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Tällä kampanjalla saat autosi kesävalmiiksi, sillä paketilla saat autosi
-                        sisustan puhtaaksi ja kesärenkaat vaivatta allesi.
+                        - Sisäpesupaketilla saat kaiken tarpeellisen autosi sisutan puhistamiseen.
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Paketti sisältää: sisäpesu 80€, verhoilupesu 30€, takakontti 15€ ja
-                        renkaanvaihto 20€.
+                        - Pesuun sisältyy: | Sisäpesu 60€ | Verhoilupesu 50€ | Nahanpuhdistus &
+                        Hoito 25€ | Takakontti 10€
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Kevään paras diili joten varaathan aikasi pian, sillä kampanjaan loppuu
-                        20.5
+                        - Kesto 2-3h
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
                 </Grid>
                 <Grid item>
-                  <Accordion expanded={expanded === "panel9"} onChange={handleChange("panel9")}>
+                  <Accordion expanded={expanded === "panel7"} onChange={handleChange("panel7")}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
-                        Perus paketti 110€
+                        Kesähoito | Paketti alk. 500€
                       </MKTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Peruspaketti on erinomainen vaihtoehto jos haluat sisäpuhistuksen ja
-                        tekstiilipesun koko autollesi.
+                        - Kesähoito on täysin asiakkaalle kustomoitu kuukausipesupaketti joka alkaa
+                        ajoneuvon syväpuhdistuksella. Tämän jälkeen autoa käydään ylläpitopesemässä
+                        kuukausittain/viikottain asiakkaan toiveiden mukaan.
                       </MKTypography>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
-                        - Pesuun sisältyy: Perus sisäpesu 80€, verhoilupesu 30€ ja takakontti 15€
+                        - Paketti on täysin räätälöity asiakkaalle ja voit tiedustella vaihtoehtoja
+                        ajanvarauslomakkeella.
+                      </MKTypography>
+                      <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
+                        - Pesut ovat mahdollisia 31.10 asti ja paikkoja on rajattu määrä.
+                      </MKTypography>
+                    </AccordionDetails>
+                  </Accordion>
+                </Grid>
+                <Grid item>
+                  <Accordion expanded={expanded === "panel8"} onChange={handleChange("panel8")}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <MKTypography variant={isLargeScreen ? "h5" : "h6"}>
+                        Premium 250€
+                      </MKTypography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
+                        - Sisäpesupaketilla saat kaiken tarpeellisen autosi sisutan puhistamiseen.
+                        Kesto 2-3h
+                      </MKTypography>
+                      <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"} mt={1}>
+                        - Pesuun sisältyy: | Sisäpesu 60€ | Verhoilupesu 50€ | Nahanpuhdistus &
+                        Hoito 25€ | Takakontti 10€
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
@@ -231,7 +249,7 @@ function Information() {
               >
                 <Grid item textAlign="center">
                   <MKTypography
-                    variant={isLargeScreen ? "h2" : "h3"}
+                    variant={isLargeScreen ? "h3" : "h3"}
                     color="default"
                     mb={2}
                     sx={({ breakpoints, typography: { size } }) => ({
@@ -252,14 +270,14 @@ function Information() {
                     </AccordionSummary>
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
-                        - Voit kysellä saatavia ulkopesu vaihtoehtoja ajanvarauslomakkeella.
+                        - Voit kysellä saatavia ulkopesuvaihtoehtoja ajanvarauslomakkeella.
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>
                 </Grid>
                 <Grid item textAlign="center">
                   <MKTypography
-                    variant={isLargeScreen ? "h2" : "h3"}
+                    variant={isLargeScreen ? "h3" : "h3"}
                     color="default"
                     mb={2}
                     sx={({ breakpoints, typography: { size } }) => ({
@@ -281,7 +299,7 @@ function Information() {
                     <AccordionDetails>
                       <MKTypography variant={isLargeScreen ? "subtitle2" : "body2"}>
                         - Voit kysellä saatavia pinnoituksia ulkopesun lisäksi
-                        ajanvarauslomakkeella.
+                        ajanvarauslomakkeella. Pikavaha/Kovavaha
                       </MKTypography>
                     </AccordionDetails>
                   </Accordion>

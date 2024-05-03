@@ -88,6 +88,7 @@ function AboutUs() {
       </MKBox>
       <Card
         sx={{
+          color: "dark",
           p: { xs: 1, lg: 3 },
           mx: { xs: 1, lg: 3 },
           mt: -6,
