@@ -75,6 +75,7 @@ function Presentation() {
             <MKTypography
               variant="h1"
               color="white"
+              textAlign="center"
               mt={-6}
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
