@@ -87,16 +87,16 @@ function Presentation() {
               Welcome to the Future of Marketing{" "}
             </MKTypography>
             <MKTypography
-              variant="body1"
-              color="white"
-              textAlign="center"
-              px={{ xs: 6, lg: 12 }}
-              mt={1}
-             >
-              We are a next-gen marketing agency using artificial intelligence to craft
-              data-backed, high-performing strategies that help brands grow faster,
-              convert smarter, and scale effortlessly.
-             </MKTypography>
+             variant="body1"
+             color="white"
+             textAlign="center"
+             px={{ xs: 6, lg: 12 }}
+             mt={1}
+           >
+             We are a next-gen marketing agency using artificial intelligence to craft
+             high-performing strategies that help brands grow faster, convert smarter,
+             and scale effortlessly.
+           </MKTypography>
           </Grid>
         </Container>
       </MKBox>
