@@ -1,59 +1,70 @@
-import React from "react";
+import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+import MKBox from "components/MKBox";
+import MKTypography from "components/MKTypography";
+import { Link } from "react-router-dom";
 
-const pages = ["Home", "Features", "Pricing", "Contact"];
-
-export default function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
+function DefaultNavbar({ brand, routes, transparent, light }) {
   return (
-    <AppBar position="sticky" elevation={0} sx={{ backgroundColor: "rgba(255, 255, 255, 0.8)", backdropFilter: "blur(6px)" }}>
-      <Toolbar>
-        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, color: "#000", fontWeight: "bold" }}>
-          BrandName
-        </Typography>
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: transparent ? "transparent" : "#fff",
+        backdropFilter: "none",
+        boxShadow: "none",
+        borderRadius: 0,
+        padding: 1,
+      }}
+    >
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        {/* Brand */}
+        <MKTypography
+          component={Link}
+          to="/"
+          variant="button"
+          fontWeight="bold"
+          color={light ? "white" : "dark"}
+          sx={{ lineHeight: 0 }}
+        >
+          {brand}
+        </MKTypography>
 
-        {isMobile ? (
-          <>
-            <IconButton size="large" aria-label="menu" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
-              <MenuIcon />
-            </IconButton>
-            <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{ vertical: "bottom", horizontal: "left" }} keepMounted transformOrigin={{ vertical: "top", horizontal: "left" }} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu}>
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </>
-        ) : (
-          <Box sx={{ display: "flex", gap: 2 }}>
-            {pages.map((page) => (
-              <Button key={page} sx={{ color: "#000", fontWeight: "bold" }}>{page}</Button>
-            ))}
-          </Box>
-        )}
+        {/* Navigation Links */}
+        <MKBox sx={{ display: "flex", gap: 2 }}>
+          {routes.map(({ name, route }) => (
+            <MKTypography
+              key={name}
+              component={Link}
+              to={route}
+              variant="button"
+              color={light ? "white" : "text"}
+              sx={{ textTransform: "capitalize", fontWeight: "regular" }}
+            >
+              {name}
+            </MKTypography>
+          ))}
+        </MKBox>
       </Toolbar>
     </AppBar>
   );
 }
+
+DefaultNavbar.propTypes = {
+  brand: PropTypes.string.isRequired,
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      route: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  transparent: PropTypes.bool,
+  light: PropTypes.bool,
+};
+
+DefaultNavbar.defaultProps = {
+  transparent: false,
+  light: false,
+};
+
+export default DefaultNavbar;
