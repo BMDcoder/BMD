@@ -95,15 +95,7 @@ function Presentation() {
             >
               We are a next-gen marketing agency using artificial intelligence to craft
             </MKTypography>
-            <MKTypography
-              variant="body1"
-              color="white"
-              textAlign="center"
-              px={{ xs: 6, lg: 12 }}
-              mt={1}
-            >
-              high-performing strategies that help brands grow faster, convert smarter, and scale effortlessly.
-            </MKTypography>
+           
           </Grid>
         </Container>
       </MKBox>
