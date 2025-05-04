@@ -93,8 +93,7 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
-              developers around the world.
+             We are a next-gen marketing agency using artificial intelligence to craft data-backed,high-performing strategies that help brands grow faster, convert smarter, and scale effortlessly. 
             </MKTypography>
           </Grid>
         </Container>
