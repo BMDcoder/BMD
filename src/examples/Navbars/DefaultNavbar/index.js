@@ -10,28 +10,37 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: transparent ? "transparent" : "#fff",
-        backdropFilter: "none",
+        backgroundColor: transparent ? "transparent" : "rgba(255, 255, 255, 0.8)",
+        backdropFilter: transparent ? "none" : "saturate(180%) blur(10px)",
         boxShadow: "none",
         borderRadius: 0,
         padding: 1,
       }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Brand */}
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
+        {/* Brand Name */}
         <MKTypography
           component={Link}
           to="/"
           variant="button"
           fontWeight="bold"
           color={light ? "white" : "dark"}
-          sx={{ lineHeight: 0 }}
+          sx={{ lineHeight: 0, fontSize: "1.25rem" }}
         >
           {brand}
         </MKTypography>
 
         {/* Navigation Links */}
-        <MKBox sx={{ display: "flex", gap: 2 }}>
+        <MKBox
+          sx={{
+            display: "flex",
+            gap: 2,
+            flexWrap: "wrap",
+            justifyContent: { xs: "center", md: "flex-end" },
+            width: { xs: "100%", md: "auto" },
+            mt: { xs: 1, md: 0 },
+          }}
+        >
           {routes.map(({ name, route }) => (
             <MKTypography
               key={name}
@@ -51,7 +60,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
 }
 
 DefaultNavbar.propTypes = {
-  brand: PropTypes.string.isRequired,
+  brand: PropTypes.string,
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -63,6 +72,7 @@ DefaultNavbar.propTypes = {
 };
 
 DefaultNavbar.defaultProps = {
+  brand: "MyBrand",
   transparent: false,
   light: false,
 };
