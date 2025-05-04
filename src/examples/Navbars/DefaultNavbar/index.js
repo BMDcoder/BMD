@@ -5,6 +5,9 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import { Link } from "react-router-dom";
 
+// Import your logo image
+import logo from "assets/images/logo.png";
+
 function DefaultNavbar({ brand, routes, transparent, light }) {
   return (
     <AppBar
@@ -18,17 +21,26 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Brand */}
-        <MKTypography
+        {/* Brand with Logo */}
+        <MKBox
           component={Link}
           to="/"
-          variant="button"
-          fontWeight="bold"
-          color={light ? "white" : "dark"}
-          sx={{ lineHeight: 0 }}
+          sx={{ display: "flex", alignItems: "center", textDecoration: "none" }}
         >
-          {brand}
-        </MKTypography>
+          <MKBox
+            component="img"
+            src={logo}
+            alt="logo"
+            sx={{ height: "32px", marginRight: 1 }}
+          />
+          <MKTypography
+            variant="button"
+            fontWeight="bold"
+            color={light ? "white" : "dark"}
+          >
+            {brand}
+          </MKTypography>
+        </MKBox>
 
         {/* Navigation Links */}
         <MKBox sx={{ display: "flex", gap: 2 }}>
