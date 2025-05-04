@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 import { Link } from "react-router-dom";
 
 function DefaultNavbar({ brand, routes, transparent, light }) {
@@ -52,7 +50,6 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
   );
 }
 
-// Prop types
 DefaultNavbar.propTypes = {
   brand: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(
