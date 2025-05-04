@@ -83,7 +83,7 @@ function Presentation() {
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              Welcome to the Future of Marketing{" "}
             </MKTypography>
             <MKTypography
               variant="body1"
