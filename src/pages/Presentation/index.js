@@ -93,7 +93,7 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              We are a next-gen marketing agency{" "}
+              We are a next-gen marketing agency
             </MKTypography>
            
           </Grid>
