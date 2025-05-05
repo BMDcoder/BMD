@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import { Link } from "react-router-dom";
+import logo from "assets/images/logo.png"; // adjust path as needed
 
 function DefaultNavbar({ brand, routes, transparent, light }) {
   return (
@@ -18,17 +19,23 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
-        {/* Brand Name */}
-        <MKTypography
-          component={Link}
-          to="/"
-          variant="button"
-          fontWeight="bold"
-          color={light ? "white" : "dark"}
-          sx={{ lineHeight: 0, fontSize: "1.25rem" }}
-        >
-          {brand}
-        </MKTypography>
+        {/* Brand Logo and Name */}
+        <MKBox component={Link} to="/" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <MKBox
+            component="img"
+            src={logo}
+            alt="logo"
+            sx={{ height: 30, width: "auto", display: "block" }}
+          />
+          <MKTypography
+            variant="button"
+            fontWeight="bold"
+            color={light ? "white" : "dark"}
+            sx={{ fontSize: "1.25rem" }}
+          >
+            {brand}
+          </MKTypography>
+        </MKBox>
 
         {/* Navigation Links */}
         <MKBox
