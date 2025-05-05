@@ -37,12 +37,12 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         {/* Brand Logo and Name */}
         <MKBox component={Link} to="/" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <MKBox 
-            component="img" 
-            src={logo} 
-            alt="logo" 
+          <MKBox
+            component="img"
+            src={logo}
+            alt="logo"
             sx={{ height: 30, width: "auto", display: "block" }}
-             />
+          />
           <MKTypography
             variant="button"
             fontWeight="bold"
@@ -104,11 +104,18 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
             <Divider sx={{ my: 1 }} />
             {routes.map(({ name, route }) => (
               <ListItem key={name} disablePadding>
-                <ListItemButton component={Link} to={route} onClick={toggleDrawer(false)}>
+                <ListItemButton
+                  component={Link}
+                  to={route}
+                  onClick={toggleDrawer(false)}
+                >
                   <ListItemText
                     primary={name}
                     primaryTypographyProps={{
-                      sx: { textTransform: "capitalize", color: "text.primary" },
+                      sx: {
+                        textTransform: "capitalize",
+                        color: "text.primary",
+                      },
                     }}
                   />
                 </ListItemButton>
