@@ -104,11 +104,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
             <Divider sx={{ my: 1 }} />
             {routes.map(({ name, route }) => (
               <ListItem key={name} disablePadding>
-                <ListItemButton
-                  component={Link}
-                  to={route}
-                  onClick={toggleDrawer(false)}
-                >
+                <ListItemButton component={Link} to={route} onClick={toggleDrawer(false)}>
                   <ListItemText
                     primary={name}
                     primaryTypographyProps={{
