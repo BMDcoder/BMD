@@ -1,12 +1,28 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import { Link } from "react-router-dom";
 import logo from "assets/images/logo.png"; // adjust path as needed
 
 function DefaultNavbar({ brand, routes, transparent, light }) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = (open) => () => {
+    setDrawerOpen(open);
+  };
+
   return (
     <AppBar
       position="sticky"
@@ -37,15 +53,12 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
           </MKTypography>
         </MKBox>
 
-        {/* Navigation Links */}
+        {/* Desktop Links */}
         <MKBox
           sx={{
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             gap: 2,
-            flexWrap: "wrap",
-            justifyContent: { xs: "center", md: "flex-end" },
-            width: { xs: "100%", md: "auto" },
-            mt: { xs: 1, md: 0 },
+            alignItems: "center",
           }}
         >
           {routes.map(({ name, route }) => (
@@ -61,6 +74,64 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
             </MKTypography>
           ))}
         </MKBox>
+
+        {/* Hamburger Icon on Mobile */}
+        <IconButton
+          edge="end"
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer(true)}
+          sx={{ display: { xs: "block", md: "none" } }}
+        >
+          <MenuIcon sx={{ color: light ? "white" : "black" }} />
+        </IconButton>
+
+        {/* Drawer for Mobile Navigation */}
+        <Drawer
+          anchor="right"
+          open={drawerOpen}
+          onClose={toggleDrawer(false)}
+          PaperProps={{
+            sx: {
+              width: 250,
+              paddingTop: 1,
+              paddingX: 2,
+            },
+          }}
+        >
+          {/* Close Icon */}
+          <MKBox sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <IconButton onClick={toggleDrawer(false)} size="large">
+              <CloseIcon />
+            </IconButton>
+          </MKBox>
+
+          {/* Nav List */}
+          <List>
+            <ListItem disableGutters>
+              <MKTypography variant="h6" sx={{ fontWeight: "bold", ml: 1 }}>
+                {brand}
+              </MKTypography>
+            </ListItem>
+            <Divider sx={{ my: 1 }} />
+            {routes.map(({ name, route }) => (
+              <ListItem key={name} disablePadding>
+                <ListItemButton
+                  component={Link}
+                  to={route}
+                  onClick={toggleDrawer(false)}
+                >
+                  <ListItemText
+                    primary={name}
+                    primaryTypographyProps={{
+                      sx: { textTransform: "capitalize", color: "text.primary" },
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
       </Toolbar>
     </AppBar>
   );
