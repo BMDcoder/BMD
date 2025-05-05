@@ -79,7 +79,7 @@ DefaultNavbar.propTypes = {
 };
 
 DefaultNavbar.defaultProps = {
-  brand: "BM DIGITAL",
+  brand: "",
   transparent: false,
   light: false,
 };
