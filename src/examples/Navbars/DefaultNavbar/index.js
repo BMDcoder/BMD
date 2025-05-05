@@ -11,7 +11,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: transparent ? "transparent" : "rgba(255, 255, 255, 0.8)",
+        backgroundColor: transparent ? "transparent" : "rgba(255, 255, 255, 0.6)",
         backdropFilter: transparent ? "none" : "saturate(180%) blur(10px)",
         boxShadow: "none",
         borderRadius: 0,
