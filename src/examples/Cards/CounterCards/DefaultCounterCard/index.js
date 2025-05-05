@@ -23,10 +23,9 @@ import CountUp from "react-countup";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function DefaultCounterCard({ color, count, title, description, ...rest }) {
+function DefaultCounterCard({ title, description }) {
   return (
     <MKBox p={2} textAlign="center" lineHeight={1}>
-    
       {title && (
         <MKTypography variant="h5" mt={2} mb={1}>
           {title}
