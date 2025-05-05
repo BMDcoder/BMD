@@ -93,7 +93,7 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-               We are a next-gen marketing agency using artificial intelligence to craft data-backed, high-performing marketing strategies
+               Smart marketing, powered by AI and data.
             </MKTypography>
           </Grid>
         </Container>
