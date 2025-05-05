@@ -37,7 +37,12 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         {/* Brand Logo and Name */}
         <MKBox component={Link} to="/" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <MKBox component="img" src={logo} alt="logo" sx={{ height: 30, width: "auto", display: "block" }} />
+          <MKBox 
+            component="img" 
+            src={logo} 
+            alt="logo" 
+            sx={{ height: 30, width: "auto", display: "block" }}
+             />
           <MKTypography
             variant="button"
             fontWeight="bold"
