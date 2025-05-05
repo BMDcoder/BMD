@@ -92,7 +92,8 @@ function Presentation() {
               textAlign="center"
               px={{ xs: 6, lg: 12 }}
               mt={1}
-            >Smart marketing, powered by AI and data
+            >
+              Smart marketing, powered by AI and Data
             </MKTypography>
           </Grid>
         </Container>
