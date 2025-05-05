@@ -16,8 +16,6 @@ Coded by www.creative-tim.com
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// react-countup component
-import CountUp from "react-countup";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
