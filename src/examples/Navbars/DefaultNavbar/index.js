@@ -14,7 +14,7 @@ import Divider from "@mui/material/Divider";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import { Link } from "react-router-dom";
-import logo from "assets/images/logo.png"; // adjust path as needed
+import logo from "assets/images/logo.png";
 
 function DefaultNavbar({ brand, routes, transparent, light }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -37,12 +37,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         {/* Brand Logo and Name */}
         <MKBox component={Link} to="/" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <MKBox
-            component="img"
-            src={logo}
-            alt="logo"
-            sx={{ height: 30, width: "auto", display: "block" }}
-          />
+          <MKBox component="img" src={logo} alt="logo" sx={{ height: 30, width: "auto", display: "block" }} />
           <MKTypography
             variant="button"
             fontWeight="bold"
@@ -54,13 +49,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
         </MKBox>
 
         {/* Desktop Links */}
-        <MKBox
-          sx={{
-            display: { xs: "none", md: "flex" },
-            gap: 2,
-            alignItems: "center",
-          }}
-        >
+        <MKBox sx={{ display: { xs: "none", md: "flex" }, gap: 2, alignItems: "center" }}>
           {routes.map(({ name, route }) => (
             <MKTypography
               key={name}
@@ -91,13 +80,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
           anchor="right"
           open={drawerOpen}
           onClose={toggleDrawer(false)}
-          PaperProps={{
-            sx: {
-              width: 250,
-              paddingTop: 1,
-              paddingX: 2,
-            },
-          }}
+          PaperProps={{ sx: { width: 250, paddingTop: 1, paddingX: 2 } }}
         >
           {/* Close Icon */}
           <MKBox sx={{ display: "flex", justifyContent: "flex-end" }}>
@@ -116,11 +99,7 @@ function DefaultNavbar({ brand, routes, transparent, light }) {
             <Divider sx={{ my: 1 }} />
             {routes.map(({ name, route }) => (
               <ListItem key={name} disablePadding>
-                <ListItemButton
-                  component={Link}
-                  to={route}
-                  onClick={toggleDrawer(false)}
-                >
+                <ListItemButton component={Link} to={route} onClick={toggleDrawer(false)}>
                   <ListItemText
                     primary={name}
                     primaryTypographyProps={{
