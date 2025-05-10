@@ -33,8 +33,8 @@ function DesignBlocks() {
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                     padding: "1rem",
                     height: "auto",
-                    backgroundColor: "rgba(255, 255, 255, 0.4)",
-                    backdropFilter: "blur(6px)",
+                    backgroundColor: "rgba(255, 255, 255, 0.6)",
+                    backdropFilter: "blur(20px)",
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "scale(1.05)",
