@@ -33,8 +33,8 @@ function Counters() {
             <DefaultCounterCard
               //count={70}
               //suffix="+"
-              title="Campaign Automation"
-              description="Scale Without Limits. Personalize Without Effort."
+              title="Data-Backed Strategies"
+              description="Identify hidden patterns,target high-intent buyers."
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
