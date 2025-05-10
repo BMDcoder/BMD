@@ -7,7 +7,7 @@ export default [
     items: [
       {
         image: localImage,
-        name: "Page Headers",
+        name: "Web&App Tracking",
         count: 10,
         route: "/sections/page-sections/page-headers",
       },
