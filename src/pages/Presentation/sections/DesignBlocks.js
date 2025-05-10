@@ -56,7 +56,7 @@ function DesignBlocks() {
       my={6}
       py={6}
       sx={{
-        backgroundImage: `url("/assets/images/bg3.jpg")`,
+        backgroundImage: `url("assets/images/bg3.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
