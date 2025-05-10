@@ -64,15 +64,16 @@ function DesignBlocks() {
           <MKBadge
             variant="contained"
             color="info"
-            badgeContent="Infinite combinations"
+            badgeContent="Our Process"
             container
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            Our Process
+            Data Pipeline That Works For Every Business
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            Every business big or small needs to collect and connect customer data to make smarter decisions.
+            Every business big or small needs to collect and connect customer data to make smarter
+             decisions.
           </MKTypography>
         </Grid>
       </Container>
