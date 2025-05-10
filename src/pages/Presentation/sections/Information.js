@@ -44,7 +44,7 @@ function Information() {
                   <>
                     What Is 
                     <br />
-                    Data-Driven
+                  
                   </>
                 }
                 description="All the MUI components that you need in a development have been re-design with the new look."
