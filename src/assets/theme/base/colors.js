@@ -25,8 +25,8 @@ export default {
   },
 
   text: {
-    main: "#ffffff",
-    focus: "#ffffff",
+    main: "#000000",
+    focus: "#000000",
   },
 
   transparent: {
