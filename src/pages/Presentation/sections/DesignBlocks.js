@@ -22,7 +22,7 @@ function DesignBlocks() {
       </Grid>
       <Grid item xs={12} lg={9}>
         <Grid container spacing={3} justifyContent="center">
-          {items.slice(0, 9).map(({ image, name, route }) => (
+          {items.slice(0, 6).map(({ image, name, route }) => (
             <Grid item xs={12} sm={4} md={4} key={name}>
               <Link to={route} style={{ textDecoration: "none" }}>
                 <ExampleCard
