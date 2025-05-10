@@ -9,7 +9,7 @@ import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => {
-    const { image, name, route } = items[0]; // one item per block
+    const { image, name, route } = items[0]; // removed count and pro
 
     return (
       <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
@@ -26,7 +26,7 @@ function DesignBlocks() {
         <Grid item xs={12} lg={9}>
           <Grid container spacing={3} justifyContent="center">
             <Grid item xs={12} md={8} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route} style={{ textDecoration: "none" }}>
+              <Link to={route} style={{ textDecoration: "none" }}>
                 <ExampleCard
                   image={image}
                   name={name}
