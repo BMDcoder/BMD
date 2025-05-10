@@ -42,9 +42,9 @@ function Information() {
                 icon="touch_app"
                 title={
                   <>
-                    Feel the
+                    What Is 
                     <br />
-                    Material Kit
+                    Data-Driven Marketing?
                   </>
                 }
                 description="All the MUI components that you need in a development have been re-design with the new look."
