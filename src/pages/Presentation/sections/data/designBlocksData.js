@@ -3,8 +3,7 @@ import localImage from "assets/images/logo.png";
 export default [
   {
     title: "Design Blocks",
-    description:
-      "A selection of 45 page sections that fit perfectly in any combination",
+    description: "A selection of 45 page sections that fit perfectly in any combination",
     items: [
       {
         image: localImage,
