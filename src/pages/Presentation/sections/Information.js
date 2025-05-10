@@ -40,9 +40,7 @@ function Information() {
               <RotatingCardFront
                 image={bgFront}
                 icon="touch_app"
-                title={
-                 kk
-                }
+                title="kk"
                 description="All the MUI components that you need in a development have been re-design with the new look."
               />
               <RotatingCardBack
