@@ -34,7 +34,8 @@ function DesignBlocks() {
                       boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Light shadow for depth
                       padding: "1rem", // Padding for a nice layout inside
                       height: "auto", // Ensure height adjusts to content
-                      backgroundColor: "rgba(3, 166, 120, 0.6)",
+                      border: "1px solid rgba(3, 166, 120, 0.7)",
+                      backgroundColor: "rgba(255, 255, 255, 0.6)",
                       transition: "transform 0.3s ease", // Smooth hover effect
                       "&:hover": {
                         transform: "scale(1.05)", // Slight scale on hover
