@@ -68,8 +68,8 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="Analyze & Predict"
-                  description="AI-powered brain of data-driven marketing where machine learning 
+                  title="Analysis & Prediction"
+                  description="AI-powered brain with machine learning  
                   processes customer behavior to spot trends, forecast outcomes, and automate high-impact decisions."
                 />
               </Grid>
