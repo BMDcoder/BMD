@@ -69,7 +69,7 @@ function DesignBlocks() {
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            Data Pipeline That Works For Every Business
+            Build A Data Pipeline That Works For Your Business
           </MKTypography>
           <MKTypography variant="body1" color="text">
             Every business big or small needs to collect and connect customer data to make smarter
