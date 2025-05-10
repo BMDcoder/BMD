@@ -1,4 +1,4 @@
-import localImage from "assets/images/logo.png";
+import localImage from "assets/images/web.png";
 
 export default [
   {
