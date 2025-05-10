@@ -41,7 +41,7 @@ function Information() {
                 image={bgFront}
                 icon="touch_app"
                 title="Data-Driven Marketing"
-                description="Leveraging customer data, AI, and analytics to make informed marketing decisions—eliminating guesswork and maximizing ROI."
+                description="We leverage customer data, AI, and analytics to make informed marketing decisions—eliminating guesswork and maximizing ROI."
               />
               <RotatingCardBack
                 image={bgBack}
