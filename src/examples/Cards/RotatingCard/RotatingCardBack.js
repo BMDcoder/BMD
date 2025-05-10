@@ -87,7 +87,7 @@ function RotatingCard({ color, image, title, description, action }) {
 
 // Setting default props for the RotatingCard
 RotatingCard.defaultProps = {
-  color: "#014040",
+  color: "success",
 };
 
 // Typechecking props for the RotatingCard
