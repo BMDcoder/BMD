@@ -40,8 +40,8 @@ function Information() {
               <RotatingCardFront
                 image={bgFront}
                 icon="touch_app"
-                title="kk"
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                title="Data-Driven Marketing"
+                description="Leveraging customer data, AI, and analytics to make informed marketing decisions—eliminating guesswork and maximizing ROI."
               />
               <RotatingCardBack
                 image={bgBack}
