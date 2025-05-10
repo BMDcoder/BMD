@@ -69,11 +69,10 @@ function DesignBlocks() {
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            Huge collection of sections
+            Our Process
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            We have created multiple options for you to put together and customise into pixel
-            perfect pages.
+            Every business big or small needs to collect and connect customer data to make smarter decisions.
           </MKTypography>
         </Grid>
       </Container>
