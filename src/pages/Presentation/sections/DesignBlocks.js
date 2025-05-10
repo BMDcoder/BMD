@@ -56,23 +56,8 @@ function DesignBlocks() {
       my={6}
       py={6}
       sx={{
-        backgroundImage: `url("/assets/images/bg3.jpg")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        background: "linear-gradient(135deg, #FFB6C1, #FFD700)", // Gradient background (light pink to yellow)
         position: "relative",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "rgba(194, 20, 20, 0.92)",
-          backdropFilter: "blur(6px)",
-          zIndex: 0,
-        },
         zIndex: 1,
       }}
     >
