@@ -9,7 +9,7 @@ import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => {
-    const { image, name, count, route, pro } = items[0]; // one item per block
+    const { image, name, route } = items[0]; // one item per block
 
     return (
       <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
@@ -30,8 +30,6 @@ function DesignBlocks() {
                 <ExampleCard
                   image={image}
                   name={name}
-                  count={count}
-                  pro={pro}
                   sx={{
                     height: "100%",
                     transform: "scale(1.05)",
