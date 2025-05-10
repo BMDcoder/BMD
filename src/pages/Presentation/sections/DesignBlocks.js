@@ -72,8 +72,7 @@ function DesignBlocks() {
             Build A Data Pipeline That Works For Your Business
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            Every business big or small needs to collect and connect customer data to make smarter
-             decisions.
+            Every business big or small needs customer data to make accurate decisions.
           </MKTypography>
         </Grid>
       </Container>
