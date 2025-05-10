@@ -61,8 +61,8 @@ function Information() {
                 <DefaultInfoCard
                   icon="content_copy"
                   title="Smart Data Collection"
-                  description="Automatically capturing, organizing, and enriching customer information us
-                  ing AI, behavioral tracking, and integrated tech stacks—turning raw data into actionable marketing intelligence."
+                  description="Automatically capturing, organizing, and enriching customer information
+                  using AI, behavioral tracking, and integrated tech stacks—turning raw data into actionable marketing intelligence."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
