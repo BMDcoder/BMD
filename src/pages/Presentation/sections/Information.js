@@ -60,9 +60,9 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  title="Smart Data Collection"
+                  description="Automatically capturing, organizing, and enriching customer information us
+                  ing AI, behavioral tracking, and integrated tech stacks—turning raw data into actionable marketing intelligence."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
