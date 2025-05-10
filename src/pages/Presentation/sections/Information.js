@@ -68,8 +68,9 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="Analyze & Predict"
+                  description="AI-powered brain of data-driven marketing where machine learning 
+                  processes customer behavior to spot trends, forecast outcomes, and automate high-impact decisions."
                 />
               </Grid>
             </Grid>
