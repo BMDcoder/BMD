@@ -34,7 +34,7 @@ function Counters() {
               //count={70}
               //suffix="+"
               title="Data-Backed Strategies"
-              description="Identify hidden patterns,target high-intent buyers."
+              description="Identify hidden patterns, focus on high-intent buyers."
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
@@ -51,7 +51,7 @@ function Counters() {
             <DefaultCounterCard
               //count={4}
               title="Automated Lead Generation"
-              description="Leads That Convert Themselves."
+              description="Capture leads smartly, Automate nurturing."
             />
           </Grid>
         </Grid>
