@@ -9,8 +9,6 @@ import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => {
-    const { image, name, route } = items[0]; // removed count and pro
-
     return (
       <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
         <Grid item xs={12} lg={3}>
@@ -25,22 +23,26 @@ function DesignBlocks() {
         </Grid>
         <Grid item xs={12} lg={9}>
           <Grid container spacing={3} justifyContent="center">
-            <Grid item xs={12} md={8} sx={{ mb: 2 }} key={name}>
-              <Link to={route} style={{ textDecoration: "none" }}>
-                <ExampleCard
-                  image={image}
-                  name={name}
-                  sx={{
-                    height: "100%",
-                    transform: "scale(1.05)",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.08)",
-                    },
-                  }}
-                />
-              </Link>
-            </Grid>
+            {items.slice(0, 9).map(({ image, name, route }) => (
+              <Grid item xs={12} sm={4} md={3} lg={2} sx={{ mb: 2 }} key={name}>
+                <Link to={route} style={{ textDecoration: "none" }}>
+                  <ExampleCard
+                    image={image}
+                    name={name}
+                    sx={{
+                      borderRadius: "12px", // Rounded corners
+                      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Light shadow for depth
+                      padding: "1rem", // Padding for a nice layout inside
+                      height: "auto", // Ensure height adjusts to content
+                      transition: "transform 0.3s ease", // Smooth hover effect
+                      "&:hover": {
+                        transform: "scale(1.05)", // Slight scale on hover
+                      },
+                    }}
+                  />
+                </Link>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </Grid>
