@@ -102,9 +102,7 @@ function DesignBlocks() {
         </Grid>
       </Container>
 
-      <Container sx={{ mt: 6, position: "relative", zIndex: 2 }}>
-        {renderData}
-      </Container>
+      <Container sx={{ mt: 6, position: "relative", zIndex: 2 }}>{renderData}</Container>
     </MKBox>
   );
 }
