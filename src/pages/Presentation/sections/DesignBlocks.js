@@ -69,7 +69,7 @@ function DesignBlocks() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "rgba(255, 255, 255, 0.92)",
+          backgroundColor: "rgba(194, 20, 20, 0.92)",
           backdropFilter: "blur(6px)",
           zIndex: 0,
         },
