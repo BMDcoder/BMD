@@ -33,7 +33,7 @@ function DesignBlocks() {
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                     padding: "1rem",
                     height: "auto",
-                    backgroundColor: "rgba(255, 255, 255, 0.6)",
+                    backgroundColor: "rgba(255, 255, 255, 0.4)",
                     backdropFilter: "blur(6px)",
                     transition: "transform 0.3s ease",
                     "&:hover": {
@@ -55,7 +55,7 @@ function DesignBlocks() {
       my={6}
       py={6}
       sx={{
-        background: "linear-gradient(95deg,rgba(2, 115, 94, 0.6),rgba(242, 116, 5, 0.6))", // Gradient background (light pink to yellow)
+        background: "linear-gradient(95deg,rgba(2, 115, 94, 0.5),rgba(242, 116, 5, 0.5))", // Gradient background (light pink to yellow)
         position: "relative",
         zIndex: 1,
       }}
