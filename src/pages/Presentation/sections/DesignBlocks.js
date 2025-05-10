@@ -55,7 +55,7 @@ function DesignBlocks() {
       my={6}
       py={6}
       sx={{
-        background: "linear-gradient(135deg, #02735e, #04cea8)", // Gradient background (light pink to yellow)
+        background: "linear-gradient(135deg, #02735e, #f27405)", // Gradient background (light pink to yellow)
         position: "relative",
         zIndex: 1,
       }}
