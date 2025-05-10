@@ -15,7 +15,7 @@ function DesignBlocks() {
           <MKTypography variant="h3" fontWeight="bold" mb={1}>
             {title}
           </MKTypography>
-          <MKTypography variant="body2" fontWeight="regular" color="text" mb={1} pr={2}>
+          <MKTypography variant="body2" fontWeight="regular" mb={1} pr={2}>
             {description}
           </MKTypography>
         </MKBox>
