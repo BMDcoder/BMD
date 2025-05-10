@@ -9,7 +9,7 @@ import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => {
-    const { image, name, count, route, pro } = items[0]; // render only first item
+    const { image, name, count, route, pro } = items[0]; // one item per block
 
     return (
       <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
@@ -24,10 +24,23 @@ function DesignBlocks() {
           </MKBox>
         </Grid>
         <Grid item xs={12} lg={9}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route}>
-                <ExampleCard image={image} name={name} count={count} pro={pro} />
+          <Grid container spacing={3} justifyContent="center">
+            <Grid item xs={12} md={8} sx={{ mb: 2 }} key={name}>
+              <Link to={pro ? "/" : route} style={{ textDecoration: "none" }}>
+                <ExampleCard
+                  image={image}
+                  name={name}
+                  count={count}
+                  pro={pro}
+                  sx={{
+                    height: "100%",
+                    transform: "scale(1.05)",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.08)",
+                    },
+                  }}
+                />
               </Link>
             </Grid>
           </Grid>
