@@ -9,7 +9,7 @@ import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => {
-    const { image, name, count, route, pro } = items[0]; // pick only the first item
+    const { image, name, count, route, pro } = items[0]; // render only first item
 
     return (
       <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
@@ -18,13 +18,7 @@ function DesignBlocks() {
             <MKTypography variant="h3" fontWeight="bold" mb={1}>
               {title}
             </MKTypography>
-            <MKTypography
-              variant="body2"
-              fontWeight="regular"
-              color="secondary"
-              mb={1}
-              pr={2}
-            >
+            <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
               {description}
             </MKTypography>
           </MKBox>
