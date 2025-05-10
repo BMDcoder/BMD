@@ -24,7 +24,7 @@ function DesignBlocks() {
         <Grid item xs={12} lg={9}>
           <Grid container spacing={3} justifyContent="center">
             {items.slice(0, 9).map(({ image, name, route }) => (
-              <Grid item xs={12} sm={4} md={3} lg={2} sx={{ mb: 2 }} key={name}>
+              <Grid item xs={12} sm={4} md={4} key={name}> {/* 3 items per row */}
                 <Link to={route} style={{ textDecoration: "none" }}>
                   <ExampleCard
                     image={image}
