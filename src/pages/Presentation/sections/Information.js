@@ -78,9 +78,9 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="price_change"
-                  title="Insight Optimization"
+                  title="Optimization"
                   description="Extracting actionable intelligence from
-                   raw data and refining marketing strategies for maximum performance, Transforming numbers into executable tactics."
+                   data and refining marketing strategies for maximum performance, Transforming numbers into executable tactics."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
