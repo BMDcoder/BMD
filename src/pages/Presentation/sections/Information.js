@@ -49,8 +49,8 @@ function Information() {
                 description="Our cutting-edge innovation helps brands predict, personalize, and profit from every customer interaction."
                 action={{
                   type: "internal",
-                  route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  route: "/",
+                  label: "Chat With Us",
                 }}
               />
             </RotatingCard>
