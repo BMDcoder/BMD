@@ -2,8 +2,8 @@ import localImage from "assets/images/web.png";
 
 export default [
   {
-    title: "Design Blocks",
-    description: "A selection of 45 page sections that fit perfectly in any combination",
+    title: "Data Aggregation & Integration",
+    description: "We connect to all customer touchpoints and track every interactions.",
     items: [
       {
         image: localImage,
