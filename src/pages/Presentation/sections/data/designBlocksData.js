@@ -1,4 +1,4 @@
-import localImage from "assets/images/logo.png";
+import localImage from "source/assets/images/logo.png";
 
 export default [
   {
@@ -118,8 +118,7 @@ export default [
   },
   {
     title: "Input Areas",
-    description:
-      "50+ elements that you need for text manipulation and insertion",
+    description: "50+ elements that you need for text manipulation and insertion",
     items: [
       {
         image: localImage,
@@ -149,8 +148,7 @@ export default [
   },
   {
     title: "Attention Catchers",
-    description:
-      "20+ Fully coded components that popup from different places of the screen",
+    description: "20+ Fully coded components that popup from different places of the screen",
     items: [
       {
         image: localImage,
@@ -180,8 +178,7 @@ export default [
   },
   {
     title: "Elements",
-    description:
-      "80+ carefully crafted small elements that come with multiple colors and shapes",
+    description: "80+ carefully crafted small elements that come with multiple colors and shapes",
     items: [
       {
         image: localImage,
