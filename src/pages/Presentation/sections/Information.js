@@ -77,7 +77,7 @@ function Information() {
             <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="price_change"
+                  icon="flip_to_front"
                   title="Optimization"
                   description="Extracting actionable intelligence from
                    data and refining marketing strategies for maximum performance, Transforming numbers into executable tactics."
