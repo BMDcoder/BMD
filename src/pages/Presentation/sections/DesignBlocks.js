@@ -8,52 +8,75 @@ import ExampleCard from "pages/Presentation/components/ExampleCard";
 import data from "pages/Presentation/sections/data/designBlocksData";
 
 function DesignBlocks() {
-  const renderData = data.map(({ title, description, items }) => {
-    return (
-      <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
-        <Grid item xs={12} lg={3}>
-          <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-            <MKTypography variant="h3" fontWeight="bold" mb={1}>
-              {title}
-            </MKTypography>
-            <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-              {description}
-            </MKTypography>
-          </MKBox>
-        </Grid>
-        <Grid item xs={12} lg={9}>
-          <Grid container spacing={3} justifyContent="center">
-            {items.slice(0, 9).map(({ image, name, route }) => (
-              <Grid item xs={12} sm={4} md={4} key={name}>
-                <Link to={route} style={{ textDecoration: "none" }}>
-                  <ExampleCard
-                    image={image}
-                    name={name}
-                    sx={{
-                      borderRadius: "12px", // Rounded corners
-                      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Light shadow for depth
-                      padding: "1rem", // Padding for a nice layout inside
-                      height: "auto", // Ensure height adjusts to content
-                      border: "0.5px solid rgba(3, 166, 120, 0.5)",
-                      backgroundColor: "rgba(255, 255, 255, 0.6)",
-                      transition: "transform 0.3s ease", // Smooth hover effect
-                      "&:hover": {
-                        transform: "scale(1.05)", // Slight scale on hover
-                      },
-                    }}
-                  />
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
+  const renderData = data.map(({ title, description, items }) => (
+    <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
+      <Grid item xs={12} lg={3}>
+        <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
+          <MKTypography variant="h3" fontWeight="bold" mb={1}>
+            {title}
+          </MKTypography>
+          <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
+            {description}
+          </MKTypography>
+        </MKBox>
+      </Grid>
+      <Grid item xs={12} lg={9}>
+        <Grid container spacing={3} justifyContent="center">
+          {items.slice(0, 9).map(({ image, name, route }) => (
+            <Grid item xs={12} sm={4} md={4} key={name}>
+              <Link to={route} style={{ textDecoration: "none" }}>
+                <ExampleCard
+                  image={image}
+                  name={name}
+                  sx={{
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    padding: "1rem",
+                    height: "auto",
+                    border: "1px solid rgba(3, 166, 120, 0.7)",
+                    backgroundColor: "rgba(255, 255, 255, 0.6)",
+                    backdropFilter: "blur(6px)",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                    },
+                  }}
+                />
+              </Link>
+            </Grid>
+          ))}
         </Grid>
       </Grid>
-    );
-  });
+    </Grid>
+  ));
 
   return (
-    <MKBox component="section" my={6} py={6}>
-      <Container>
+    <MKBox
+      component="section"
+      my={6}
+      py={6}
+      sx={{
+        backgroundImage: `url("/assets/images/bg3.jpg")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        position: "relative",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          backdropFilter: "blur(6px)",
+          zIndex: 0,
+        },
+        zIndex: 1,
+      }}
+    >
+      <Container sx={{ position: "relative", zIndex: 2 }}>
         <Grid
           container
           item
@@ -79,7 +102,9 @@ function DesignBlocks() {
         </Grid>
       </Container>
 
-      <Container sx={{ mt: 6 }}>{renderData}</Container>
+      <Container sx={{ mt: 6, position: "relative", zIndex: 2 }}>
+        {renderData}
+      </Container>
     </MKBox>
   );
 }
