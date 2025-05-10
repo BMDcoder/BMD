@@ -41,11 +41,7 @@ function Information() {
                 image={bgFront}
                 icon="touch_app"
                 title={
-                  <>
-                    What Is 
-                    <br />
-                  
-                  </>
+                 kk
                 }
                 description="All the MUI components that you need in a development have been re-design with the new look."
               />
